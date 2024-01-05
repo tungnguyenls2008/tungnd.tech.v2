@@ -27,9 +27,7 @@ Route::middleware(['web'])->group(function () {
 
         return back();
     })->name('language-switch');
-    Route::get('/', function () {
-        return view('frontend.index');
-    });
+    Route::get('/', [\App\Http\Controllers\Controller::class,'frontend'])->name('frontend');
 
 
 });

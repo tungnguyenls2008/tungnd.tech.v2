@@ -11,9 +11,30 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('abouts', function (Blueprint $table) {
+        Schema::create('settings', function (Blueprint $table) {
             $table->id();
+            $table->text('about_description');
+            $table->text('about_additional_description');
+            $table->string('about_title');
+            $table->string('background_img');
+            $table->string('avatar_img');
+            $table->timestamp('about_bod');
+            $table->string('about_phone');
+            $table->string('about_email');
+            $table->string('about_address');
+            $table->text('facts_description');
+            $table->integer('facts_num_1');
+            $table->integer('facts_num_2');
+            $table->integer('facts_num_3');
+            $table->integer('facts_num_4');
+            $table->text('skills_description');
+            $table->string('twitter_link');
+            $table->string('facebook_link');
+            $table->string('instagram_link');
+            $table->string('zalo_link');
+            $table->string('linkin_link');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
