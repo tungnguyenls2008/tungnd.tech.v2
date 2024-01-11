@@ -35,12 +35,14 @@ class SettingResource extends Resource
                     ->maxLength(65535)
                     ->columnSpanFull(),
 
-                Forms\Components\FileUpload::make('background_img')
+                Forms\Components\FileUpload::make('background_img')->required(),
+                Forms\Components\FileUpload::make('avatar_img')->required(),
+                Forms\Components\FileUpload::make('cv_eng')
                     ->required()
-                    ,
-                Forms\Components\FileUpload::make('avatar_img')
+                ,
+                Forms\Components\FileUpload::make('cv_vie')
                     ->required()
-                    ,
+                ,
                 Forms\Components\DateTimePicker::make('about_bod')
                     ->required(),
                 Forms\Components\TextInput::make('about_phone')

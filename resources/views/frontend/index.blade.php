@@ -49,20 +49,24 @@
 
         <div class="profile">
             <img
-                src="{{isset($setting)&&$settings->avatar_img?asset('storage/'.$settings->avatar_img): asset('img/avatar.jpg')}}"
+                src="{{isset($settings)&&$settings->avatar_img?asset('storage/'.$settings->avatar_img): asset('img/avatar.jpg')}}"
                 alt="" class="img-fluid rounded-circle">
             <h1 class="text-light"><a href="{{route('frontend')}}">@lang('Tung Nguyen')</a></h1>
             <div class="social-links mt-3 text-center">
-                <a href="{{isset($setting)&&$settings->facebook_link?$settings->facebook_link: 'https://facebook.com/lonelycount'}}" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
-                <a href="{{isset($setting)&&$settings->twitter_link?$settings->twitter_link: 'https://github.com/tungnguyenls2008'}}" class="github" target="_blank"><i class="bx bxl-github"></i></a>
-                <a href="{{isset($setting)&&$settings->linkin_link?$settings->linkin_link: 'https://www.linkedin.com/in/tungnguyen0a280'}}" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                <a href="{{isset($settings)&&$settings->facebook_link?$settings->facebook_link: 'https://facebook.com/lonelycount'}}" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
+                <a href="{{isset($settings)&&$settings->twitter_link?$settings->twitter_link: 'https://github.com/tungnguyenls2008'}}" class="github" target="_blank"><i class="bx bxl-github"></i></a>
+                <a href="{{isset($settings)&&$settings->linkin_link?$settings->linkin_link: 'https://www.linkedin.com/in/tungnguyen0a280'}}" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
             </div>
             <div class="text-center">
                 <a class="btn btn-primary"
                    href="{{route('language-switch')}}">{{app()->getLocale()=='en'?'VIE':'ENG'}}</a>
             </div>
         </div>
-
+        <hr>
+        <a href="{{isset($settings)&&$settings->cv_eng?asset('storage/'.$settings->cv_eng): asset('pdf/NGUYEN-DUC-TUNG-eng.pdf')}}" class="btn btn-outline-primary">Eng CV</a>
+        <br>
+        <a href="{{isset($settings)&&$settings->cv_vie?asset('storage/'.$settings->cv_vie): asset('pdf/NGUYEN-DUC-TUNG-vie.pdf')}}" class="btn btn-outline-primary">Vie CV</a>
+        <hr>
         <nav id="navbar" class="nav-menu navbar">
             <ul>
                 <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>@lang('Home')</span></a>
@@ -106,11 +110,11 @@
             <div class="row">
                 <div class="col-lg-4" data-aos="fade-right">
                     <img
-                        src="{{isset($setting)&&$settings->avatar_img?asset('storage/'.$settings->avatar_img): asset('img/avatar.jpg')}}"
+                        src="{{isset($settings)&&$settings->avatar_img?asset('storage/'.$settings->avatar_img): asset('img/avatar.jpg')}}"
                         class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-                    <h3>{{isset($setting)&&$settings->about_title?$settings->about_title: 'Web Developer & Technology Enthusiast.'}}</h3>
+                    <h3>{{isset($settings)&&$settings->about_title?$settings->about_title: 'Web Developer & Technology Enthusiast.'}}</h3>
                     <p class="fst-italic">
                         @lang('something to say here')
                     </p>
@@ -118,18 +122,18 @@
                         <div class="col-lg-6">
                             <ul>
                                 <li><i class="bi bi-chevron-right"></i> <strong>@lang('Birthday'):</strong>
-                                    <span>{{isset($setting)&&$settings->about_dob?$settings->about_dob: '03 Oct 1989'}}</span></li>
+                                    <span>{{isset($settings)&&$settings->about_dob?$settings->about_dob: '03 Oct 1989'}}</span></li>
                                 <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong>
-                                    <span>{{isset($setting)&&$settings->about_phone?$settings->about_phone: '(+84) 0914 83 1089'}}</span></li>
+                                    <span>{{isset($settings)&&$settings->about_phone?$settings->about_phone: '(+84) 0914 83 1089'}}</span></li>
                                 <li><i class="bi bi-chevron-right"></i> <strong>@lang('Address'):</strong>
-                                    <span>{{isset($setting)&&$settings->about_address?$settings->about_address: 'Hanoi, Vietnam'}}</span></li>
+                                    <span>{{isset($settings)&&$settings->about_address?$settings->about_address: 'Hanoi, Vietnam'}}</span></li>
                             </ul>
                         </div>
                         <div class="col-lg-6">
                             <ul>
                                 <li><i class="bi bi-chevron-right"></i> <strong>@lang('Age'):</strong> <span>30</span></li>
                                 <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong>
-                                    <span>{{isset($setting)&&$settings->about_email?$settings->about_email: 'tungnguyenls2008@gmail.com'}}</span>
+                                    <span>{{isset($settings)&&$settings->about_email?$settings->about_email: 'tungnguyenls2008@gmail.com'}}</span>
                                 </li>
                                 <li><i class="bi bi-chevron-right"></i> <strong>@lang('Freelance'):</strong>
                                     <span>@lang('Available')</span></li>
@@ -159,7 +163,7 @@
                 <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
                     <div class="count-box">
                         <i class="bi bi-emoji-smile"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="{{isset($setting)&&$settings->facts_num_1?$settings->facts_num_1: '473'}}" data-purecounter-duration="1"
+                        <span data-purecounter-start="0" data-purecounter-end="{{isset($settings)&&$settings->facts_num_1?$settings->facts_num_1: '473'}}" data-purecounter-duration="1"
                               class="purecounter"></span>
                         <p><strong>@lang('Happy Clients')</strong> @lang('something')</p>
                     </div>
@@ -168,7 +172,7 @@
                 <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
                     <div class="count-box">
                         <i class="bi bi-journal-richtext"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="{{isset($setting)&&$settings->facts_num_2?$settings->facts_num_2: '34'}}" data-purecounter-duration="1"
+                        <span data-purecounter-start="0" data-purecounter-end="{{isset($settings)&&$settings->facts_num_2?$settings->facts_num_2: '34'}}" data-purecounter-duration="1"
                               class="purecounter"></span>
                         <p><strong>@lang('Projects')</strong> @lang('something')</p>
                     </div>
@@ -177,7 +181,7 @@
                 <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
                     <div class="count-box">
                         <i class="bi bi-headset"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="{{isset($setting)&&$settings->facts_num_3?$settings->facts_num_3: '9606'}}" data-purecounter-duration="1"
+                        <span data-purecounter-start="0" data-purecounter-end="{{isset($settings)&&$settings->facts_num_3?$settings->facts_num_3: '9606'}}" data-purecounter-duration="1"
                               class="purecounter"></span>
                         <p><strong>@lang('Hours Of Coding')</strong> @lang('something')</p>
                     </div>
@@ -186,7 +190,7 @@
                 <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="300">
                     <div class="count-box">
                         <i class="bi bi-people"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="{{isset($setting)&&$settings->facts_num_4?$settings->facts_num_4: '30'}}" data-purecounter-duration="1"
+                        <span data-purecounter-start="0" data-purecounter-end="{{isset($settings)&&$settings->facts_num_4?$settings->facts_num_4: '30'}}" data-purecounter-duration="1"
                               class="purecounter"></span>
                         <p><strong>@lang('Mentored Successors')</strong> @lang('something')</p>
                     </div>
@@ -257,9 +261,9 @@
                         <h4>@lang('Tung Nguyen')</h4>
                         <p><em>@lang('Dynamic and deadline-oriented PHP Developer with over 5 years of experience crafting and executing user-focused digital solutions. Proficient in conceptualizing and delivering robust web applications, from the initial coding phase to the refinement of the final, polished product.')</em></p>
                         <ul>
-                            <li>{{isset($setting)&&$settings->about_address?$settings->about_address: 'Hanoi, Vietnam'}}</li>
-                            <li>{{isset($setting)&&$settings->about_phone?$settings->about_phone: '(+84) 0914 83 1089'}}</li>
-                            <li>{{isset($setting)&&$settings->about_email?$settings->about_email: 'tungnguyenls2008@gmail.com'}}</li>
+                            <li>{{isset($settings)&&$settings->about_address?$settings->about_address: 'Hanoi, Vietnam'}}</li>
+                            <li>{{isset($settings)&&$settings->about_phone?$settings->about_phone: '(+84) 0914 83 1089'}}</li>
+                            <li>{{isset($settings)&&$settings->about_email?$settings->about_email: 'tungnguyenls2008@gmail.com'}}</li>
                         </ul>
                     </div>
 
