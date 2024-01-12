@@ -28,6 +28,8 @@ Route::middleware(['web'])->group(function () {
         return back();
     })->name('language-switch');
     Route::get('/', [\App\Http\Controllers\Controller::class,'frontend'])->name('frontend');
+    Route::get('/portfolio-details/{id}', [\App\Http\Controllers\Controller::class,'portfolioDetail'])->name('portfolio-detail');
+    Route::get('/chat', [\App\Http\Controllers\Controller::class,'chat'])->name('chat');
 
 
 });

@@ -99,9 +99,9 @@ class SettingResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('about_title')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('background_img')
+                Tables\Columns\ImageColumn::make('background_img')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('avatar_img')
+                Tables\Columns\ImageColumn::make('avatar_img')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('about_bod')
                     ->dateTime()
